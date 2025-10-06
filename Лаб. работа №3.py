@@ -1,30 +1,19 @@
-print("числа от 1 до 10 (for)")
-for i in range(1, 11):
-    print(i, end=" ")
-print("\n")
+lst = [1, 2, 3, 4, 5, 6]
+reversed_every_second = lst[::2][::-1]
+print(reversed_every_second)  # [5, 3, 1]
 
-print("сумма чисел от 1 до 100 (while)")
-i = 1
-s = 0
-while i <= 100:
-    s += i
-    i += 1
-print("Сумма =", s)
-print()
+def sort_by_length(words):
+    return sorted(words, key=len, reverse=False)
 
-print("таблица умножения (вложенные циклы)")
-for i in range(1, 6):      
-    for j in range(1, 6):
-        print(f"{i*j:2}", end=" ") 
-    print()
-print()
+words_list = ["apple", "kiwi", "banana", "pear"]
+sorted_words = sort_by_length(words_list)
+print(sorted_words)  # ['kiwi', 'pear', 'apple', 'banana']
 
-print("обработка массива")
-A = [3, -5, 7, 10, -2, 4]
-print("Исходный массив:", A)
+def swap_inner(lst):
+    if len(lst) >= 4:
+        lst[1], lst[-2] = lst[-2], lst[1]
+    return lst
 
-for i in range(len(A)):
-    if A[i] > 0:
-        A[i] = 0   
-
-print("Измененный массив:", A)
+data = [100, 200, 300, 400, 500]
+swapped_data = swap_inner(data)
+print(swapped_data)  # [100, 400, 300, 200, 500]
